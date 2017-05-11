@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    div
+        form(action='blog,' method='post')
+            div.input-group.input-group-lg
+                label(for='title') title
+                input.form-control(name='title')
+            div.input-group.input-group-lg
+                label(for='body') body
+                input.form-control(placeholder='write your post here', name='body')
+            div
+                input.btn.btn-primary.btn-md(type='submit', value='Submit')
