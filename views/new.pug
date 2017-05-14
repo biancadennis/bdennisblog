@@ -2,12 +2,15 @@ extends layout
 
 block content
     div
-        form(action='blog,' method='post')
-            div.input-group.input-group-lg
+        form(action='/blog' method='post')
+            .form-group
                 label(for='title') title
                 input.form-control(name='title')
-            div.input-group.input-group-lg
+            .form-group
                 label(for='body') body
                 input.form-control(placeholder='write your post here', name='body')
-            div
+            .form-group
+                label(for='slug') slug
+                input.form-control(name='slug')
+            .form-group
                 input.btn.btn-primary.btn-md(type='submit', value='Submit')
