@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    if project
+        h1 #{project.title}
+        p= project.body
+    else
+        h2 Not Found
+        p That Project Does Not Exist

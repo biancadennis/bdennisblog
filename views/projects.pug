@@ -1,0 +1,5 @@
+.list-group
+    each project in projects
+        a.list-group-item(href=project.url)
+            h4.list-group-item-heading= project.title
+            p.list-group-item-text= project.createdAt

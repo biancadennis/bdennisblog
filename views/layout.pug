@@ -1,7 +1,18 @@
 doctype html
 html
   head
-    title= title
+    title Bianca Dennis
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
   body
+    nav.navbar.navbar-inverse
+      div.container-fluid
+        div.collapse.navbar-collapse#bs-example-navbar-collapse-1
+          ul.nav.navbar-nav
+            li
+              a(href='#') About Me
+            li
+              a(href='/blog') Blog
+            li
+              a(href='/portfolio') Portfolio
     block content
