@@ -1,8 +1,9 @@
 extends layout
 
 block content
+    include error
     div
-        form(action='/portfolio' method='post')
+        form(action='/blog' method='post', enctype='multipart/form-data')
             .form-group
                 label(for='title') title
                 input.form-control(name='title')
@@ -12,5 +13,8 @@ block content
             .form-group
                 label(for='slug') slug
                 input.form-control(name='slug')
+            .form-group
+                label(for='image') image
+                input.form-control(name='image', type='file')
             .form-group
                 input.btn.btn-primary.btn-md(type='submit', value='Submit')

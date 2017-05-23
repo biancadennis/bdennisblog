@@ -5,6 +5,16 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             autoIncrement: true
         },
+        imageFilename: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            defaultValue: '',
+            validate: {
+                notEmpty: {
+                    msg: 'Image is required'
+                }
+            }
+        },
         title: Sequelize.STRING,
         body: Sequelize.TEXT,
         slug: Sequelize.STRING
@@ -15,6 +25,12 @@ module.exports = function(sequelize, Sequelize) {
             getterMethods: {
                 url: function() {
                     return(`/portfolio/${this.slug}`);
+                },
+            imageUrl: function() {
+                return(`/images/portfolio-images/${this.imageFilename}`)
+                },
+            imageThumbnailUrl: function() {
+                return(`${this.imageUrl}-thumbnail`);
                 }
             }
     }));

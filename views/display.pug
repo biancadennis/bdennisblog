@@ -4,5 +4,8 @@ block content
     if post
         h1 #{post.title} 
         p= post.body
+        if post.imageFilename
+            p: img(src=post.imageThumbnailUrl)
+        a.btn.btn-primary.btn-sm(href=`${post.url}/delete`) Delete Post
     else
         h2 Not Found

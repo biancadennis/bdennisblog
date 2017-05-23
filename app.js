@@ -9,8 +9,12 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var blog = require('./routes/blog');
 var portfolio = require('./routes/portfolio');
-
 var app = express();
+var dateFormat = require('dateformat');
+app.locals.date = function(date) {
+  return(dateFormat(date, 'dddd d mmmm yyyy'));
+};
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,13 +1,23 @@
-module.exports = function(sequelize, Sequelize) {
+module.exports = function(sequelize, DataTypes) {
     return(sequelize.define('post', {
         id: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        title: Sequelize.STRING,
-        body: Sequelize.TEXT,
-        slug: Sequelize.STRING
+        imageFilename: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: '',
+            validate: {
+                notEmpty: {
+                    msg: 'image is required'
+                }
+            }
+        },
+        title: DataTypes.STRING,
+        body: DataTypes.TEXT,
+        slug: DataTypes.STRING
     }, {
          defaultScope: {
             order: [['createdAt', 'DESC']]
@@ -15,6 +25,12 @@ module.exports = function(sequelize, Sequelize) {
             getterMethods: {
                 url: function() {
                     return(`/blog/${this.slug}`);
+                },
+                imageUrl: function(){
+                    return(`/images/blog-images/${this.imageFilename}`);
+                },
+                imageThumbnailUrl: function() {
+                    return(`${this.imageUrl}-thumbnail`);
                 }
             }
     }));

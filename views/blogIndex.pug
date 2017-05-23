@@ -1,21 +1,8 @@
 extends layout
 
 block content
-    div.separate
+    div
         h1.page-header #TheTechLife
-            div.about.col-lg-9.col-md-12
-                div.anarticle
-                    //figure out how to feature a post
-                
-
-
-
-
-
-
-
-
-
     include posts
     div
-        a(href='/blog/new') create a post
+        a.btn.btn-primary.btn-lg(href='/blog/new') create a post

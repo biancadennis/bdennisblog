@@ -1,11 +1,5 @@
-h3 Featured Posts
-    div.col-sm-6.col-md-4
-        div.thumbnail
-            each post in posts
-                //- img(src=#{post.image})
-                div.caption
-                    a(href=post.url)
-                        h4 #{post.title}
-                        //- h3=#{post.summary}
-
-                
+div.list-group
+    each post in posts
+        div.list-group-item
+            a(href=post.url)
+                h4.list-group-item-heading #{post.title} #[small= date(post.createdAt)]

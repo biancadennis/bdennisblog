@@ -4,6 +4,9 @@ block content
     if project
         h1 #{project.title}
         p= project.body
+        if project.imageFilename
+            p: img(src=project.imageThumbnailUrl)
+        a.btn.btn-primary.btn-sm(href=`${project.url}/delete`) Delete Project
     else
         h2 Not Found
         p That Project Does Not Exist
