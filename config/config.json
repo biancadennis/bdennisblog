@@ -11,6 +11,8 @@
     "dialect": "mysql"
   },
   "production": {
+    "database": "blog",
+    "dialect": "postgres",
     "use_env_variable": "DATABASE_URL"
   }
 }
