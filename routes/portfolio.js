@@ -6,6 +6,7 @@ var uploadHandler = multer({dest: 'public/images/portfolio-images'});
 var sharp = require('sharp');
 var router = express.Router();
 
+
 router.get('/', function (request,response){
     Project.findAll().then(function(projects) {
         response.render('portfolio', {
