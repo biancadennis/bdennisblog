@@ -16,7 +16,7 @@ router.get('/', function (request,response){
 
 router.get('/new', function(request, response){
     response.render('new-portfolio-item')
-});
+})
 
 router.post('/', uploadHandler.single('image'), function(request, response){
     Project.create({
