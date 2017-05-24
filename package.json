@@ -17,10 +17,10 @@
     "pg": "^6.2.2",
     "pug": "~2.0.0-beta11",
     "sequelize": "^3.30.4",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "sequelize-cli": "^2.7.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
-    "sequelize-cli": "^2.7.0"
+    "nodemon": "^1.11.0"
   }
 }
